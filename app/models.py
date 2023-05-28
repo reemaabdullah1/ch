@@ -75,18 +75,3 @@ class Appointment(models.Model):
 
     #ِSend request
 
-class TranslationRequest(models.Model):
-    customer = models.OneToOneField(User, related_name='translation_requests', on_delete=models.CASCADE)
-    translator = models.OneToOneField(User, related_name='accepted_translation_requests', null=True, blank=True , on_delete=models.CASCADE)
-    text = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-
-class Product(models.Model):
-    translatorName = models.OneToOneField(Appointment,on_delete=models.CASCADE)
-    price = models.OneToOneField(Translator,on_delete=models.CASCADE )
-
-    def __str__(self):
-        return self.translatorName
-
-    def get_display_price(self):
-        return "{0:.2f}".format(self.price)
