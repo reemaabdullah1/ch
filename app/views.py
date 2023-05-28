@@ -1,7 +1,6 @@
 import datetime
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.forms import UserCreationForm
-from .forms import CustomerSignUpForm,AdminSignUpForm, TranslatorSignUpForm, LoginForm
 from .models import Customer, Appointment, User, Translatorr
 from django.contrib.auth import login
 from django.http import JsonResponse
