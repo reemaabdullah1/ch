@@ -1,0 +1,28 @@
+<html>
+<head>
+    {% load static %}
+
+    <title>
+        More than one user
+    </title>
+</head>
+<style>
+    body{
+        background-color: #f7fcff;
+    }
+    a { text-decoration: none; }
+    div{
+        width: 300px; 
+        margin: auto;
+        margin-top: 20%;
+        margin-left: 36%;
+        align-items: center;
+    }
+</style>
+<body>
+    <div>
+    <button><a href="{% url 'customer_signup' %}">Regiter as Customer</a></button><br><br>
+    <button><a href="{% url 'translator_signup'%}">Regiter as Translator</a></button>
+</div>
+</body>
+</html>

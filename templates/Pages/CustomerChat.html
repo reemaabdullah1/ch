@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>  
+          <h1>{{user.username}} Chat Page</h1>
+    </head>
+    <style>
+        body{
+            background-color: #f7fcff;
+        }
+    </style>
+
+    <body>
+
+    </body>
+    <footer >
+        <section style="margin-bottom: 50%;">
+            <style>
+                div.links {
+                  font-size: 50%;
+                  margin: auto;
+                 margin-top: 500px;
+                } 
+                a {
+                    font-size: 15px;
+                    margin: 7px;
+                }
+                </style>  
+            <div class="links">  
+            <center>  
+            <a class="collapse-item" href="{% url 'customer_Home_Page' %}">Home Page</a>
+            <a class="collapse-item" href="{% url 'CustomerChat' %}">Chat</a>
+            <a class="collapse-item" href="{% url 'MachineTranslation' %}">MT</a>
+            <a class="collapse-item" href="{% url 'CustomerProfile' %}">Profile</a>
+            </center>  
+      </div> 
+      </section>
+      </footer>
+      </html>    

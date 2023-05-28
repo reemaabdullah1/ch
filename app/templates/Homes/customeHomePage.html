@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html style="width:100%">
+<center>
+    <body style="padding-top: 30% ;">
+        <style type="text/css">
+            body{
+                background-color: #f7fcff;
+            }
+            button{
+                margin-top: 30px;
+                width: 300px;
+
+            }
+        </style>
+        <h1> Please select the language </h1>
+        {% block content %}
+        <form method="POST" action="/customerHomePage" style="color: aqua;">
+            {% csrf_token %}
+            <div class="l" >
+            <select id="language" name="textfield" style="width: 300px;">
+                <option value="EN">English</option>
+                <option value="AR">Arabic</option>
+                <option value="FR">France</option>
+                <option value="es">Spanish</option>
+                <option value="ru">Russian</option>
+                <option value="so">Somalia</option>
+                <option value="sq">Albanian</option>
+                <option value="th">Thai</option>
+                <option value="tr">Turkish</option>
+                <option value="ur">Urdu</option>
+                <option value="zh">Chinese</option>
+            </select>
+        </div>
+            <div class="row mt-2">
+                <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-primary mt-2 btn-block">Search for translator</button>
+                </div>
+            </div>
+        </form>    
+        {% endblock content %}
+    </body>
+</center>
+<footer >
+    <section style="margin-bottom: 50%;">
+        <style>
+            div.links {
+            font-size: 50%;
+            margin: auto;
+            margin-top: 40%;
+            } 
+            a {
+                font-size: 15px;
+                margin: 7px;
+            }
+            </style>  
+        <div class="links">  
+        <center>  
+        <a class="collapse-item" href="{% url 'customer_Home_Page' %}">Home Page</a>
+        <a class="collapse-item" href="{% url 'CustomerChat' %}">Chat</a>
+        <a class="collapse-item" href="{% url 'MachineTranslation' %}">MT</a>
+        <a class="collapse-item" href="{% url 'CustomerProfile' %}">Profile</a>
+        </center>  
+</div> 
+</section>
+</footer>
+</html>

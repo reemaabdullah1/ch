@@ -1,0 +1,30 @@
+<html>
+    <head>
+    <title>
+        More than one user
+    </title>
+</head>
+<style>
+    body{
+        background-color: #f7fcff;
+    }
+    div{
+        width: 100px;
+        margin-top: 2%;
+
+    }
+</style>
+<body>
+
+    <form  action="/customerSignUp"  method="POST" >
+        {% csrf_token %}
+        {% for field in form %}
+        <table>
+        {{ field.errors }}
+        {{ field.label_tag }} <div>{{ field }}</div> <br> 
+        {% endfor %}
+        </table>
+        <input type="Submit" name="submit" value="Signup" style="width: 200px;">
+    </form>
+</body>
+</html>

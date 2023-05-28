@@ -1,0 +1,68 @@
+{% block content %}
+
+{% if messages %}
+<div class="alert alert-success text-center" id="alert-msg">
+  {% for message in messages %}
+  <h3>{{ message }}</h3>
+  {% endfor %}
+</div>
+{% endif %}
+
+
+<!DOCTYPE html>
+<html style="width:90%"> 
+<head>
+
+</head>
+<body>
+    <style type="text/css">
+        body{
+            background-color: #f7fcff;
+        }
+        section.op{
+          margin: 7px;
+        }
+</style>
+
+ <center>
+    <section style="margin-top: 10%;" class="op">       
+    <form method="POST" action="/waitingPage" >
+      <h2>Please Select the translator</h2>
+        {% csrf_token %} 
+        <select id="translator" name="translator" style="width: 50%; margin-left: 10;">
+        {% for i in pro %}
+           <div style="width: 700x;" class="option">
+             <option value="{{ i.user_id }}" > {{ i.name }} &nbsp;  &nbsp;  &nbsp; <p>{{i.price}} RS</p></option> 
+            </div>
+        {% endfor %}
+      </select><br><br>
+      <div><button type="submit">Send request</button> </div>
+    </form>
+</section>
+</center>
+</body>
+<footer >
+  <section style="margin-bottom: 50%;">
+      <style>
+          div.links {
+            font-size: 50%;
+            margin: auto;
+           margin-top: 400px;
+          } 
+          a {
+              font-size: 15px;
+              margin: 7px;
+          }
+          </style>  
+      <div class="links">  
+      <center>  
+      <a class="collapse-item" href="{% url 'customer_Home_Page' %}">Home Page</a>
+      <a class="collapse-item" href="{% url 'CustomerChat' %}">Chat</a>
+      <a class="collapse-item" href="{% url 'MachineTranslation' %}">MT</a>
+      <a class="collapse-item" href="{% url 'CustomerProfile' %}">Profile</a>
+      </center>  
+</div> 
+</section>
+</footer>
+</html>
+{% endblock content %}

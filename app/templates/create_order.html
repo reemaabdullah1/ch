@@ -1,0 +1,18 @@
+<form method="post">
+    {% csrf_token %}
+    <label for="requester">Requester:</label>
+    <select name="requester_id" id="requester">
+        {% for customer in customers %}
+        <option value="{{ customer.id }}">{{ customer.username }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <label for="translator">Translator:</label>
+    <select name="translator_id" id="translator">
+        {% for translator in translators %}
+        <option value="{{ translator.id }}">{{ translator.username }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <input type="submit" value="Create Order">
+</form>

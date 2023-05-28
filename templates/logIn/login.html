@@ -1,0 +1,29 @@
+<html>
+    <head>
+    <title>
+        LogIn
+    </title>
+</head>
+<style>
+    body{
+        background-color: #f7fcff;
+    }
+    .center{
+        margin: auto;
+        width: 30%;
+        margin-top: 30%;
+        
+
+    }
+
+</style>
+<body>
+<div class="center">
+    <form method="POST" accept-charset="utf-8">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="Submit" value="login" style="width: 180px;">
+    </form>
+</div>
+</body>
+</html>
