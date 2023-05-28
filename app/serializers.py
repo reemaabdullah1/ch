@@ -1,10 +1,8 @@
-import stripe
 from django.conf import settings
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
-from .models import Product, User, Customer, Appointment,Translatorr
+from .models import User, Customer, Appointment,Translatorr
 
-stripe.api_key = settings.STRIPE_SECRET_KEY
 
 
 class CheckoutSessionSerializer(serializers.ModelSerializer):
