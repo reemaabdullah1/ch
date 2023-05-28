@@ -3,26 +3,6 @@ from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 from .models import User, Customer, Appointment,Translatorr
 
-
-
-class CheckoutSessionSerializer(serializers.ModelSerializer):
-    Product_id = serializers.CharField(max_length=150)
-    class Meta:
-        model = Product
-        fields = "__all__"
-        read_only_fields = ["Product"]
-
-    def check_session(self, sid):
-        try:
-            proudct = stripe.checkout.Session.retrieve(sid)
-        except stripe.error.StripeError as e:
-            raise ValidationError(e)
-        return proudct
-    
-    def validate(self, attrs):
-        proudct = self.check_session(attrs.pop("Product_id"))
-        attrs["Product"] = proudct
-        return super().validate(attrs)
     
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
