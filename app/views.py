@@ -10,7 +10,6 @@ from django.contrib.auth import authenticate, login
 from .serializers import *
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .models import TranslationRequest
 from django.contrib.auth.hashers import make_password
 
 #====================================================================================================
